@@ -1,0 +1,69 @@
+{
+  "json_version": 0.4,
+  "data": {
+    "name": "Frieren",
+    "author": "SPCTRE",
+    "css": "https://https://spctre-mal.github.io/list-designs/frieren/frieren.css",
+    "type": "modern",
+    "help": "https://myanimelist.net/forum/?topicid=2171795",
+    "supports": [
+      "animelist",
+      "mangalist"
+    ],
+    "background": false,
+    "style": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "flags": [
+      "beta"
+    ],
+    "columns": {
+      "mode": "whitelist",
+      "animelist": {
+        "Score": true,
+        "Episodes": true,
+        "Genre": null,
+        "Tags": null,
+        "Image": true,
+        "MAL Score": null,
+        "Type": null,
+        "Numbers": false
+      },
+      "mangalist": {
+        "Score": true,
+        "Chapters": true,
+        "Volumes": true,
+        "Genre": null,
+        "Tags": null,
+        "Image": true,
+        "MAL Score": null,
+        "Type": null,
+        "Numbers": false
+      }
+    },
+    "preview": {
+      "category": [7],
+      "cover": false,
+      "columns": {
+        "animelist": {
+          "Score": true,
+          "Type": true,
+          "Episodes": true,
+          "Genre": true,
+          "Studios": true,
+          "MAL Score": true,
+          "Image": true
+        },
+        "mangalist": {
+          "Score": true,
+          "Chapters": true,
+          "Volumes": true,
+          "Genre": null,
+          "Tags": null,
+          "Image": true,
+          "MAL Score": true,
+          "Type": true,
+          "Numbers": false
+        }
+      }
+    }
+  }
+}
