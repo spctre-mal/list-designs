@@ -1,0 +1,6 @@
+/* 9 = ecchi, 49 = erotica, 12 = hentai */
+.ownlist:not([data-owner="1"]) #list_surround table:has(td [href*="genre=9"]),
+.ownlist:not([data-owner="1"]) #list_surround table:has(td [href*="genre=49"]),
+.ownlist:not([data-owner="1"]) #list_surround table:has(td [href*="genre=12"]) {
+    display: none !important;
+}
