@@ -1,69 +1,113 @@
 {
-  "json_version": 0.4,
-  "data": {
-    "name": "Frieren",
-    "author": "SPCTRE",
-    "css": "https://spctre-mal.github.io/list-designs/frieren/frieren.css",
-    "type": "modern",
-    "help": "https://myanimelist.net/forum/?topicid=2171795",
-    "supports": [
-      "animelist",
-      "mangalist"
-    ],
-    "background": false,
-    "style": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    "flags": [
-      "beta"
-    ],
-    "columns": {
-      "mode": "whitelist",
-      "animelist": {
-        "Score": true,
-        "Episodes": true,
-        "Genre": null,
-        "Tags": null,
-        "Image": true,
-        "MAL Score": null,
-        "Type": null,
-        "Numbers": false
-      },
-      "mangalist": {
-        "Score": true,
-        "Chapters": true,
-        "Volumes": true,
-        "Genre": null,
-        "Tags": null,
-        "Image": true,
-        "MAL Score": null,
-        "Type": null,
-        "Numbers": false
-      }
-    },
-    "preview": {
-      "category": [7],
-      "cover": false,
-      "columns": {
-        "animelist": {
-          "Score": true,
-          "Type": true,
-          "Episodes": true,
-          "Genre": true,
-          "Studios": true,
-          "MAL Score": true,
-          "Image": true
-        },
-        "mangalist": {
-          "Score": true,
-          "Chapters": true,
-          "Volumes": true,
-          "Genre": null,
-          "Tags": null,
-          "Image": true,
-          "MAL Score": true,
-          "Type": true,
-          "Numbers": false
-        }
-      }
-    }
-  }
+	"json_version": 0.4,
+	"data": {
+		"name": "Frieren",
+		"author": "SPCTRE",
+		"css": "https://spctre-mal.github.io/list-designs/frieren/frieren.css",
+		"type": "modern",
+		"help": "https://myanimelist.net/forum/?topicid=2171795",
+		"supports": ["animelist", "mangalist"],
+		"background": false,
+		"style": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+		"flags": ["beta"],
+		"columns": {
+			"mode": "whitelist",
+			"animelist": {
+				"Score": true,
+				"Episodes": true,
+				"Genre": true,
+				"Image": true,
+				"MAL Score": true,
+				"Type": true,
+				"Tags": null,
+				"Notes": null,
+				"Demographics": null,
+				"Studios": null,
+				"Rating": null,
+				"Numbers": false
+			},
+			"mangalist": {
+				"Score": true,
+				"Chapters": true,
+				"Volumes": true,
+				"Genres": true,
+				"Image": true,
+				"MAL Score": true,
+				"Type": null,
+				"Tags": null,
+				"Notes": null,
+				"Demographics": null,
+				"Magazine": null,
+				"Numbers": false
+			}
+		},
+		"mods": {
+			"hd-covers": {
+				"name": "HD Covers",
+				"description": "Adds HD covers. [b]Will increase page load times.[/b]",
+				"css": {
+					"import": "@\\import \"https://malscraper.azurewebsites.net/covers/all/anime/presets/dataimagelinkbefore\";\n@\\import \"https://malscraper.azurewebsites.net/covers/all/manga/presets/dataimagelinkbefore\";"
+				},
+				"options": {
+					"username": {
+						"name": "Your MyAnimeList Username",
+						"description": "Must be entered exactly as it appears on MyAnimeList. While not required, this will reduce the page load impact by more than 95% for most users.",
+						"type": "text",
+						"replacements": [
+							["all/anime/presets", "anime/{{{insert}}}/presets"],
+							["all/manga/presets", "manga/{{{insert}}}/presets"]
+						],
+						"default": ""
+					}
+				}
+			},
+			"hide-explicit-genres": {
+				"name": "Hide Explicit Genres",
+				"description": "Hentai, Erotica, Ecchi (optional) will be hidden to everyone but you. [b]The Genre column must be enabled.[/b]",
+				"css": {
+					"bottom": "https://spctre-mal.github.io/list-designs/_mods/modern/hide-explicit-genres-owner.css"
+				},
+				"options": {
+					"genre-ecchi": {
+						"name": "Hide Ecchi",
+						"description": "You will also hide Ecchi items to visitors.",
+						"type": "toggle",
+						"replacements": [
+							[
+								".ownlist:not([data-owner=\"1\"]) tbody.list-item:has([href*=\"genre=9\"]),",
+								"",
+								".ownlist:not([data-owner=\"1\"]) tbody.list-item:has([href*=\"genre=9\"]),"
+							]
+						],
+						"default": true
+					}
+				}
+			}
+		},
+		"preview": {
+			"category": [7],
+			"cover": false,
+			"columns": {
+				"animelist": {
+					"Score": true,
+					"Type": true,
+					"Episodes": true,
+					"Genre": true,
+					"Studios": true,
+					"MAL Score": true,
+					"Image": true
+				},
+				"mangalist": {
+					"Score": true,
+					"Chapters": true,
+					"Volumes": true,
+					"Genre": null,
+					"Tags": null,
+					"Image": true,
+					"MAL Score": true,
+					"Type": true
+				}
+			}
+		}
+	}
 }
