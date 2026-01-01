@@ -1,4 +1,4 @@
-@\import "https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300..700&family=Annie+Use+Your+Telescope&display=swap";
+@\import "https://fonts.googleapis.com/css2?family=Radio+Canada:ital,wght@0,300..700;1,300..700&family=Annie+Use+Your+Telescope&display=swap";
 
 html {
 	height: 100vh;
@@ -137,7 +137,7 @@ html:has(.list-menu-float) {
 }
 
 .cover-block,
-.cover-block #cover-image-container,
+.cover-block .image-container,
 .status-menu,
 .list-table,
 .list-unit .list-status-title .text,
@@ -166,6 +166,7 @@ a:hover,
 .list-table .list-table-data .data a {
 	color: var(--white) !important;
 	transition: color var(--fast);
+	text-decoration: none;
 }
 
 .list-table .list-table-data .data a:hover:not(.title .link, .add-edit-more a, .icon-add-episode, .tags .edit, .notes .edit) {
@@ -296,24 +297,21 @@ a:hover,
 	background-color: var(--lighter-grey) !important;
 }
 
-.header {
-	display: flex !important;
-	background-color: var(--shadow-bg) !important;
-	backdrop-filter: blur(var(--blur));
+
+.header:has(.list-menu .icon-menu) {
+	display: flex;
+	background-color: unset !important;
 	font-size: var(--font) !important;
 	height: initial !important;
-	padding: var(--space-sm) var(--space) !important;
-	position: absolute !important;
-	top: calc(var(--space) + var(--status-menu-height));
+	position: fixed !important;
+	top: var(--space-lg);
 	left: calc(var(--space-lg) + var(--list-menu-width));
 	width: auto;
-	border-radius: var(--radius-pill);
-	z-index: 1;
-	box-shadow: var(--shadow);
+	z-index: 100;
 }
 
-.ownlist:has(#cover-image:not([src*="spacer.gif"])) .header {
-	top: var(--space-lg);
+.header {
+	display: none;
 }
 
 .header a:hover {
@@ -336,12 +334,9 @@ a:hover,
 	color: var(--white) !important;
 }
 
-.header .header-menu .btn-menu {
-	font-size: var(--font) !important;
-}
-
+.header .header-menu .btn-menu,
 .header .header-info {
-	font-size: var(--font-sm) !important;
+	display: none !important;
 }
 
 .header .header-info a {
@@ -349,31 +344,58 @@ a:hover,
 }
 
 .header .header-menu .list-menu {
-	left: 115px !important;
-	top: 30px !important;
+	display: flex;
+	position: initial !important;
+	left: unset !important;
+	top: unset !important;
 	right: unset !important;
-	background-color: var(--shadow-bg) !important;
+	background-color: unset !important;
+	box-shadow: unset;
 }
 
 .header .header-menu .list-menu .icon-menu {
-	width: auto !important;
+	--radius-pill: calc(var(--sort-height) / 2);
 	display: flex !important;
+	width: auto !important;
+	min-width: var(--sort-height);
+	height: var(--sort-height) !important;
 	align-items: center;
-	gap: var(--space-sm);
-	padding: var(--space-sm) var(--space) !important;
+	justify-content: center;
 	font-size: var(--font-md) !important;
+	border-radius: var(--radius-pill);
+	background-color: var(--shadow-bg);
+	backdrop-filter: blur(var(--blur));
+	box-shadow: var(--shadow);
+	transition: background-color var(--fast);
+}
+
+.header .header-menu .list-menu .icon-menu .icon {
+	position: initial !important;
+	fill: var(--primary) !important;
+	transition: fill var(--fast);
+	width: var(--sort-height);
 }
 
 .header .header-menu .list-menu .icon-menu:hover {
 	background-color: var(--primary);
 }
 
-.header .header-menu .list-menu .icon-menu svg.icon {
-	position: initial !important;
+.header .header-menu .list-menu .icon-menu:hover:after {
+	content: "Manga List";
+	white-space: nowrap;
+	font-size: var(--font);
+	font-weight: 400;
+	color: var(--list-menu-bg);
+	padding-right: var(--space);
+	line-height: 1;
+}
+
+.header .header-menu .list-menu .icon-menu:hover .icon {
+	fill: var(--list-menu-bg) !important;
 }
 
 .header .header-menu .list-menu .text {
-	position: initial !important;
+	display: none !important;
 }
 
 #list-container,
@@ -390,21 +412,21 @@ a:hover,
 	margin: 0 auto !important;
 }
 
-.cover-block #cover-image-container {
+.cover-block .image-container {
 	display: flex;
 }
 
-.cover-block #cover-image-container .btn-list-setting {
+.cover-block .image-container .btn-list-setting {
 	display: none;
 }
 
-.cover-block #cover-image-container img {
+.cover-block .image-container img {
 	max-width: 100% !important;
 	min-width: 100%;
 	box-shadow: var(--shadow);
 }
 
-.cover-block #cover-image-container img[src*="spacer.gif"] {
+.cover-block .image-container img[src*="spacer.gif"] {
 	display: none !important;
 }
 
@@ -837,6 +859,7 @@ a:hover,
 	overflow: hidden;
 	animation: slideIn 2s;
 	box-shadow: var(--shadow);
+	background-color: unset !important;
 }
 
 .list-item:hover .list-table-data .data.image {
@@ -888,13 +911,14 @@ a:hover,
 }
 
 .list-table .list-table-data .data.image .image {
-	display: none !important;
-	width: 100% !important;
-	height: auto !important;
+	display: flex !important;
+	width: auto !important;
+	height: 100% !important;
 }
 
 .list-table .list-table-data .data.image,
-.list-table .list-table-data .data.image .link {
+.list-table .list-table-data .data.image .link,
+.list-table .list-table-data .data.image .link:before {
 	display: block;
 	width: 100%;
 	height: 100%;
@@ -902,12 +926,14 @@ a:hover,
 	transition: var(--fast);
 }
 
-.list-table .list-table-data .data.image .link {
+.list-table .list-table-data .data.image .link:before {
+	content: "";
 	background-size: cover;
 	background-position: center;
+	position: absolute;
 }
 
-.list-table .list-table-data .data.image:before {
+.list-table .list-table-data .data.image:after {
 	content: "";
 	display: block;
 	position: absolute;
@@ -919,7 +945,7 @@ a:hover,
 	transition: opacity var(--fast);
 }
 
-.list-table .list-item:hover .data.image:before,
+.list-table .list-item:hover .data.image:after,
 .list-table .list-item:hover .data:not(.image) {
 	opacity: 1;
 	transition: opacity var(--fast);
@@ -968,12 +994,14 @@ a:hover,
 	font-family: var(--fa-style-family-classic);
 	content: "\f303";
 	font-size: var(--font-xl);
+	font-weight: 900;
 	text-shadow: var(--text-shadow);
 }
 
 .list-table .list-table-data:hover .data.title .add-edit-more .add a:before {
 	font-family: var(--fa-style-family-classic);
 	content: "\2b";
+	font-weight: 900;
 	font-size: var(--font-xl);
 	text-shadow: var(--text-shadow);
 }
@@ -1147,7 +1175,7 @@ a:hover,
 .loading-space #loading-spinner:after {
 	content: var(--loading-icon);
 	font-family: var(--fa-style-family-classic);
-	font-weight: 400;
+	font-weight: 900;
 	font-size: var(--font-2xl);
 	color: var(--white);
 	text-shadow: var(--shadow);
