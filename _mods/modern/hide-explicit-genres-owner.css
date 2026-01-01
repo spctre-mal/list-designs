@@ -1,4 +1,8 @@
-/* 9 = ecchi, 49 = erotica, 12 = hentai */
+/*
+    MOD: HIDE EXPLICIT GENRES
+	
+	9 = ecchi, 49 = erotica, 12 = hentai
+*/
 .ownlist:not([data-owner="1"]) tbody.list-item:has([href*="genre=9"]),
 .ownlist:not([data-owner="1"]) tbody.list-item:has([href*="genre=49"]),
 .ownlist:not([data-owner="1"]) tbody.list-item:has([href*="genre=12"]) {
