@@ -417,7 +417,7 @@ a:hover,
 }
 
 .cover-block .image-container .btn-list-setting {
-	display: none;
+	display: none !important;
 }
 
 .cover-block .image-container img {
