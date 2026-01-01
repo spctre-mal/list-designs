@@ -676,7 +676,7 @@ a:hover,
 }
 
 #advanced-options {
-	--text-color: var(--white);
+	--text-color: var(--list-menu-bg);
 	position: fixed !important;
 	left: unset !important;
 	right: unset !important;
@@ -690,7 +690,7 @@ a:hover,
 }
 
 .dark-mode #advanced-options {
-	--text-color: var(--mal-bg-color);
+	--text-color: var(--white);
 }
 
 #advanced-options[style]:not([style*="display: none"]) {
