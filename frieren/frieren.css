@@ -166,7 +166,7 @@ a:hover,
 .list-table .list-table-data .data a {
 	color: var(--white) !important;
 	transition: color var(--fast);
-	text-decoration: none;
+	text-decoration: none !important;
 }
 
 .list-table .list-table-data .data a:hover:not(.title .link, .add-edit-more a, .icon-add-episode, .tags .edit, .notes .edit) {
