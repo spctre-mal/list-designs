@@ -744,6 +744,7 @@ a:hover,
 
 #advanced-options input,
 #advanced-options select {
+	--mal-text-color: var(--dark-grey);
 	padding: var(--space-sm) !important;
 	height: 30px;
 	line-height: 1 !important;
@@ -754,6 +755,7 @@ a:hover,
 }
 
 #advanced-options .sort-widget input[type="radio"] + label {
+	--mal-text-color: var(--dark-grey);
 	background-color: var(--white) !important;
 	width: auto !important;
 	padding: var(--space-sm) var(--space) !important;
@@ -761,6 +763,10 @@ a:hover,
 	color: var(--mal-text-color) !important;
 	border: 1px solid var(--mal-text-color) !important;
 	line-height: 1 !important;
+}
+
+.dark-mode #advanced-options .sort-widget input[type="radio"] + label {
+	border-color: transparent !important;
 }
 
 #advanced-options .sort-widget input[type="radio"]:checked + label {
