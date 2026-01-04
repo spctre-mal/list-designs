@@ -1302,6 +1302,7 @@ footer {
 .mal-modal .mal-modal-dialog .mal-modal-content {
 	background-color: var(--mal-bg-color) !important;
 	color: var(--mal-text-color) !important;
+	border-radius: unset !important;
 }
 
 .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body,
