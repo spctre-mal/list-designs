@@ -1368,6 +1368,9 @@ footer {
 	border: unset !important;
 	border-radius: var(--radius) !important;
 	margin-bottom: var(--space-xs) !important;
+	color: var(--mal-text-color) !important;
+	border: unset !important;
+	line-height: 1 !important;
 }
 
 .mal-modal
@@ -1468,6 +1471,15 @@ footer {
 .mal-modal .mal-modal-dialog .mal-modal-content .modal-vote-replies {
 	color: var(--grey) !important;
 }
+
+.mal-modal
+	.mal-modal-dialog
+	.mal-modal-content
+	.mal-modal-body
+	.modal-vote-score-footer
+	a {
+		color: unset !important;
+	}
 
 .mal-modal
 	.mal-modal-dialog
