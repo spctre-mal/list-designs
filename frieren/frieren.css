@@ -1431,7 +1431,7 @@ footer {
 	border-radius: var(--radius) !important;
 	font-size: var(--font-sm) !important;
 	line-height: 1 !important;
-	color: var(--mal-text-color) !important;
+	color: var(--list-menu-bg) !important;
 	transition: background-color var(--fast);
 }
 
