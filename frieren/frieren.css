@@ -1518,6 +1518,7 @@ footer {
 	height: 100% !important;
 	width: 100% !important;
 	overflow: unset !important;
+	color: var(--mal-text-color) !important;
 }
 
 #fancybox-inner[style*="width: 300px"] {
@@ -1546,6 +1547,7 @@ footer {
 	border-radius: var(--radius-sm);
 	width: 100%;
 	padding: var(--space-sm) !important;
+	line-height: 1 !important;
 }
 
 #fancybox-confirm-yes-button:hover,
