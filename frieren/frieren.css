@@ -149,7 +149,6 @@ html.dark-mode {
 .status-menu,
 .list-table,
 .list-unit .list-status-title .text,
-.list-unit .list-stats,
 #footer-block {
 	width: 100% !important;
 	margin: 0 auto !important;
@@ -820,6 +819,7 @@ a:hover,
 	opacity: 0;
 	position: absolute;
 	bottom: 0;
+	width: calc(100% - var(--list-menu-width)) !important;
 }
 
 .list-unit .list-stats span:has(.floatRightHeader) {
