@@ -1236,11 +1236,12 @@ a:hover,
 }
 
 .loading-space {
-	height: 70px !important;
+	height: 150px !important;
 	font-size: 0 !important;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	padding-bottom: var(--space-xl) !important;
 }
 
 .loading-space #loading-spinner:after {
